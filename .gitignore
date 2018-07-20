@@ -1,2 +1,41 @@
+#Git ignore
+target
+*.csv
+*.class
+*.iml
+*.ipr
+*.iws
+.idea
+*.params
+#*.jar
+#!RedshiftJDBC42-1.2.1.1001.jar #Except for foo.dll
+*.doc
+out
+//*.json
+*.pdf
+stats
+
+.DS_Store
+#scala ###
 *.class
 *.log
+
+# sbt specific
+.cache/
+.history/
+#.lib/
+
+checkpoint/*
+dist/*
+target/
+#lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+
+#this project
+stats/*
