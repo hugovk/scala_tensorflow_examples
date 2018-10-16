@@ -53,14 +53,14 @@ object SequentialDNNForClassification extends App {
   var inputsWithDropOutsMap :  Map[String,Output] = Map[String,Output]()
   //Normailized input
   var normalizedInputMap :  Map[String,Output] = Map[String,Output]("0_normalizedInput" -> batchNormalization(input))
-  //Formating information regarding the Network Arquitectute . HiddenLayers , and sizes
+  //Formatting information regarding the Network Arquitectute . HiddenLayers , and sizes
   val dimensions : List[Int] =  (
     params("outputDimensionExpected").toInt  ::
     ( params("inputDimensionExpected").toInt
       :: params("hiddenLayersDimensionExpected").split(",").map(_.toInt).toList ).
       reverse ).
     reverse
-  //Seting the size of the matrix for the paremeters to be learned
+  //Setting the size of the matrix for the parameters to be learned
   var sizesTensorParameters : List[((Int,Int),Int)] = dimensions.zip(dimensions.tail).zipWithIndex
   //
   for( ((iSize,oSize),lIndex) <- sizesTensorParameters){
